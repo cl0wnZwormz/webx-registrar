@@ -14,7 +14,7 @@ local result = get("result")
 
 coroutine.wrap(function()
     local res = fetch({
-        url = "https://api.buss.lol/tlds",
+        url = "https://dns.ifuck.rocks/tlds",
         method = "GET",
         headers = { ["Content-Type"] = "application/json" },
     })
@@ -37,7 +37,7 @@ function fetch_dns()
 
     print(body)
     local res = fetch({
-        url = "https://api.buss.lol/domain",
+        url = "https://dns.ifuck.rocks/domain",
         method = "POST",
         headers = { ["Content-Type"] = "application/json" },
         body = body,
@@ -64,7 +64,7 @@ update_done.on_click(function()
         .. "}"
 
     local res = fetch({
-        url = "https://api.buss.lol/domain/" .. update_key.get_content(),
+        url = "https://dns.ifuck.rocks/domain/" .. update_key.get_content(),
         method = "PUT",
         headers = { ["Content-Type"] = "application/json" },
         body = body,
@@ -93,7 +93,7 @@ end)
 
 delete_done.on_click(function()
     local res = fetch({
-        url = "https://api.buss.lol/domain/" .. delete_key.get_content(),
+        url = "https://dns.ifuck.rocks/domain/" .. delete_key.get_content(),
         method = "DELETE",
         headers = { ["Content-Type"] = "application/json" },
     })
