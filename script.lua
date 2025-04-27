@@ -1,6 +1,7 @@
 local publish_domain = get("publish-input-domain")
 local publish_tld = get("publish-input-tld")
 local publish_ip = get("publish-input-ip")
+local publish_apikey = get("publish-input-apikey")
 local publish_done = get("done-1")
 
 local update_key = get("update-input-key")
@@ -37,7 +38,7 @@ function fetch_dns()
 
     print(body)
     local res = fetch({
-        url = "https://dns.ifuck.rocks/domain",
+        url = "https://dns.ifuck.rocks/domainapi/" .. apikey,
         method = "POST",
         headers = { ["Content-Type"] = "application/json" },
         body = body,
