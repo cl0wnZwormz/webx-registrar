@@ -38,7 +38,7 @@ function fetch_dns()
 
     print(body)
     local res = fetch({
-        url = "https://dns.ifuck.rocks/domainapi/" .. apikey,
+        url = "https://dns.ifuck.rocks/domainapi/" .. publish_apikey,
         method = "POST",
         headers = { ["Content-Type"] = "application/json" },
         body = body,
